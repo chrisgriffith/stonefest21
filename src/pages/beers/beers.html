@@ -1,21 +1,17 @@
-
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>{{brewery}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content>
-<ion-list>
+  <ion-list>
     <ion-item *ngFor="let beer of beers" (click)="beerSelected(beer)">
       <ion-icon name="beer" item-start></ion-icon>
       <h2>{{beer.beer}}</h2>
       <p>{{beer.notes}}</p>
       <p>{{beer.type}}</p>
-      
+
     </ion-item>
   </ion-list>
 </ion-content>

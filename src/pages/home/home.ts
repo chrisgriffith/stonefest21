@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { AlertController, NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  breweries: Array<{ name: string, logo: string }>
-  constructor(public navCtrl: NavController) {
-    this.breweries = [ { name: "Stone Brewery", logo: "brewery-1204_23541.jpg" },
+  breweries: Array<{ name: string, logo: string }>;
+  isLegal: boolean = false;
+
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public storage: Storage) {
+    this.breweries = [{ name: "Stone Brewery", logo: "brewery-1204_23541.jpg" },
     { name: "Stone Brewing World Bistro & Gardens - Liberty Station", logo: "brewery-1204_23541.jpg" },
-   { name: "21st Amendment Brewery", logo: "brewery-4339_203d1.jpg" },
+    { name: "21st Amendment Brewery", logo: "brewery-4339_203d1.jpg" },
     { name: "Abnormal Beer Company", logo: "brewery-194089_a617b.jpg" },
     { name: "AleSmith Brewing Company", logo: "brewery-2471_6bfa2.jpg" },
     { name: "Arrogant Brewing", logo: "brewery-234399_0c2d9.jpg" },
@@ -71,10 +74,42 @@ export class HomePage {
     { name: "Victory Brewing Company", logo: "brewery-1326_6ca88.jpg" },
     { name: "Wandering Aengus Ciderworks", logo: "brewery-wanderingaengusciderworks_4475.jpg" }]
 
+    this.storage.get('age').then((val) => {
+      if (val !== 21) {
+        this.showAlert();
+      }
+    }).catch ( (err) => {
+      console.log(err);
+    });
   }
 
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm Age',
+      message: 'Are you at least 21 years old?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            this.isLegal = false;
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.storage.set('age', 21);
+            this.isLegal = true
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
-  brewerySelected(theBrewery){
-    this.navCtrl.push("BeersPage", {brewery: theBrewery })
+  brewerySelected(theBrewery) {
+    if (this.isLegal) {
+      this.navCtrl.push("BeersPage", { brewery: theBrewery });
+    }
   }
 }
