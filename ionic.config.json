@@ -1,0 +1,8 @@
+{
+  "name": "stonefest21",
+  "app_id": "216ddf30",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

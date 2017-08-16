@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stone Fest 21
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let brewery of breweries" (click)="brewerySelected(brewery)" detail-push>
+      <ion-thumbnail item-start>
+        <img src="assets/breweries/{{brewery.logo}}">
+      </ion-thumbnail>
+      <h2>{{brewery.name}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
