@@ -17,7 +17,16 @@ export class BeersPage {
     public plt: Platform, private iab: InAppBrowser,
     beerProvider: BeersProvider) {
     let theBrewery = navParams.get("brewery")
-    this.brewery = theBrewery.name;
+
+    if (theBrewery === undefined) {
+      this.brewery = 'Stone Brewery';
+    } else {
+      this.brewery = theBrewery.name;
+    }
+
+    if (this.brewery=== undefined) {
+      this.brewery = 'Stone Brewery';
+    }
 
     beerProvider.getBeers(this.brewery).then(theFoundBeers => {
       this.beers = theFoundBeers;

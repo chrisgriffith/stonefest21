@@ -10,7 +10,7 @@
   <ion-list>
     <ion-item *ngFor="let brewery of breweries" (click)="brewerySelected(brewery)" detail-push>
       <ion-thumbnail item-start>
-        <img src="assets/breweries/{{brewery.logo}}">
+        <img src="assets/breweries/{{brewery.logo}}" alt="Company Logo">
       </ion-thumbnail>
       <h2>{{brewery.name}}</h2>
     </ion-item>
