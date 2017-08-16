@@ -77,6 +77,8 @@ export class HomePage {
     this.storage.get('age').then((val) => {
       if (val !== 21) {
         this.showAlert();
+      } else {
+        this.isLegal = true;
       }
     }).catch ( (err) => {
       console.log(err);
@@ -99,7 +101,7 @@ export class HomePage {
           text: 'Yes',
           handler: () => {
             this.storage.set('age', 21);
-            this.isLegal = true
+            this.isLegal = true;
           }
         }
       ]
