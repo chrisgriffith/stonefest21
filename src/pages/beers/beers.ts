@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BeersProvider } from '../../providers/beers/beers';
+import { HomePage } from '../../pages/home/home';
 
 @IonicPage()
 @Component({
@@ -19,13 +20,10 @@ export class BeersPage {
     let theBrewery = navParams.get("brewery")
 
     if (theBrewery === undefined) {
-      this.brewery = 'Stone Brewery';
+      // this.brewery = 'Stone Brewery';
+      this.navCtrl.setRoot(HomePage);
     } else {
       this.brewery = theBrewery.name;
-    }
-
-    if (this.brewery=== undefined) {
-      this.brewery = 'Stone Brewery';
     }
 
     beerProvider.getBeers(this.brewery).then(theFoundBeers => {
