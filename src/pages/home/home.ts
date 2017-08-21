@@ -11,7 +11,7 @@ export class HomePage {
   isLegal: boolean = false;
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public storage: Storage) {
-    this.breweries = [{ name: "Stone Brewery", logo: "brewery-1204_23541.jpg" },
+    this.breweries = [{ name: "Stone Brewing", logo: "brewery-1204_23541.jpg" },
     { name: "Stone Brewing World Bistro & Gardens - Liberty Station", logo: "brewery-1204_23541.jpg" },
     { name: "21st Amendment Brewery", logo: "brewery-4339_203d1.jpg" },
     { name: "Abnormal Beer Company", logo: "brewery-194089_a617b.jpg" },
