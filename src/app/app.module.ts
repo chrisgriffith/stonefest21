@@ -4,9 +4,6 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -39,9 +36,6 @@ const cloudSettings: CloudSettings = {
     HomePage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    InAppBrowser,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     BeersProvider
   ]
