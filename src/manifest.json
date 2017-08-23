@@ -1,6 +1,6 @@
 {
   "name": "Stone Fest 21",
-  "short_name": "Stone Fest 21",
+  "short_name": "Stone Fest",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
@@ -9,5 +9,6 @@
     "type": "image/jpg"
   }],
   "background_color": "#1c1b17",
-  "theme_color": "#1c1b17"
+  "theme_color": "#1c1b17",
+  "orientation": "portrait"
 }
