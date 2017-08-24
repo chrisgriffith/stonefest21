@@ -1,26 +1,5 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Stone Fest 21
 
-## How to use this template
+This Ionic application was written to assist users in quickly checking into [Untappd](https://untappd.com/) at the recent [Stone Brewing](http://www.stonebrewing.com/) Festival. 
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+There are two versions of the application. The master branch contains the code to generate a Cordova-based application. The PWA branch has the modifications for improved performance as a Progressive Web App. 
